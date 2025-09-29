@@ -51,7 +51,7 @@ function computeScores() {
     if (!paraLen || !targetLen) return alert("请输入段落和目标文本");
 
     const windowLen = Math.max(1, Math.floor(targetLen * windowRatio));
-    const step = Math.max(1, Math.floor(windowLen * stepRatio));
+    const step = Math.max(1, Math.floor(targetLen * stepRatio));
 
     let bestScore = 0, bestIndex = -1;
     let windowScores = [];
