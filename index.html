@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sliding Window Jaro-Winkler Tool</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Sliding Window Jaro-Winkler Tool</h1>
+
+<label>Paragraph Text:</label><br>
+<textarea id="paraText" rows="4" cols="50"></textarea><br>
+
+<label>Target Text:</label><br>
+<input type="text" id="targetText"><br>
+
+<label>Window Length Ratio (× target length):</label>
+<input type="number" id="windowRatio" min="0.1" max="3" step="0.1" value="1.0"><br>
+
+<label>Step Ratio (fraction of window length):</label>
+<input type="number" id="stepRatio" min="0.05" max="1" step="0.05" value="0.33"><br>
+
+<button onclick="computeScores()">Compute Scores</button>
+
+<h2>Results:</h2>
+<div id="scoreSummary"></div>
+
+<table id="scoreTable">
+    <thead>
+        <tr>
+            <th>Index</th>
+            <th>Window</th>
+            <th>Score</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+<script src="script.js"></script>
+</body>
+</html>
