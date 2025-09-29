@@ -1,17 +1,20 @@
+/* 基础页面样式 */
 body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f9f9f9;
     margin: 0;
-    padding: 20px;
+    padding: 15px;
     color: #333;
 }
 
+/* 标题 */
 h1 {
     text-align: center;
     color: #2c3e50;
     margin-bottom: 20px;
 }
 
+/* 标签与输入框容器 */
 label {
     font-weight: bold;
     display: block;
@@ -19,11 +22,12 @@ label {
     margin-bottom: 5px;
 }
 
+/* 输入框和文本域 */
 input[type="text"],
 input[type="number"],
 textarea {
     width: 100%;
-    max-width: 600px;
+    max-width: 100%;
     padding: 8px 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
@@ -32,6 +36,7 @@ textarea {
     box-sizing: border-box;
 }
 
+/* 按钮 */
 button {
     background-color: #3498db;
     color: white;
@@ -42,6 +47,9 @@ button {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.2s;
+    width: 100%;
+    max-width: 200px;
+    display: block;
 }
 
 button:hover {
@@ -52,14 +60,17 @@ button:hover {
 table {
     border-collapse: collapse;
     width: 100%;
-    max-width: 700px;
+    max-width: 100%;
     margin-top: 15px;
+    overflow-x: auto; /* 横向滚动 */
+    display: block;
 }
 
 th, td {
     border: 1px solid #ccc;
     padding: 8px 10px;
     text-align: left;
+    white-space: nowrap; /* 防止换行破坏表格 */
 }
 
 th {
@@ -77,7 +88,30 @@ tr:hover {
 
 /* 高亮最佳窗口已在 JS 中实现 */
 
+/* Best / Theoretical score summary */
 #scoreSummary {
     margin-top: 15px;
     font-size: 16px;
+    word-wrap: break-word;
+}
+
+/* 响应式设计 */
+@media (max-width: 640px) {
+    body {
+        padding: 10px;
+    }
+
+    button {
+        max-width: 100%;
+    }
+
+    table {
+        font-size: 13px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    textarea {
+        font-size: 14px;
+    }
 }
